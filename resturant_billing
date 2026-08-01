@@ -1,0 +1,34 @@
+n=int(input("Enter your number of dish u want to order:-"))
+print("here is your menu order from this \n fries:135 \n toastcoffee:150 \n momos:50 \n sushi:200 \n tako:100 \n pizza:299 \n hamburger:120 \n biriyani:100")
+price=0
+h=0
+item=[ ]
+for i in range(0,n):
+    dish=input("Enter the dish:-")
+    item.append(dish)
+    h+=1
+menu={
+    "fries":135,
+    "toastcoffee":150,
+    "momos":50,
+    "sushi":200,
+    "tako":100,
+    "pizza":299,
+    "hamburger":120,
+    "biriyani":100
+} 
+for dish in item:
+    if dish in menu:
+        price+=menu[dish]
+    else:
+        print("no such dishes",dish,"available order something else")
+        exit() #quit()
+gst=(price*0.18)
+if(price>500):
+    discount=(price*0.05)
+    print("discount:-",discount)
+    finalprice=price-discount+gst
+else:
+    finalprice=gst+price
+print("gst:-",gst)
+print("total price:-",finalprice)

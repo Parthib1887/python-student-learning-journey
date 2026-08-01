@@ -1,0 +1,11 @@
+scam=["winner","free","win","lottery","jackpot","freegift","freemoney","selectedwinner"]
+email_word=input("Enter the word u found in your email:-")
+found=False
+for i in range(0,len(scam)):  #if email_word in scam:
+    if(email_word==scam[i]):  # try to do in a different way
+       found=True
+       break
+if found:
+    print("Email is a scam.Stay away from this type of mail")
+else:
+    print("the email is safe")

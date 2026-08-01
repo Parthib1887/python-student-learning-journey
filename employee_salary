@@ -1,0 +1,46 @@
+employee_id=input("Enter your employee id:-")
+department=input("Enter your department:-")
+experience=int(input("Enter your experience in years:-"))
+if(len(employee_id)==7):
+    if(employee_id[0:3]=="EMP" and employee_id[3:7].isdigit()):
+        print("valid employee id")
+    else:
+        print("invalid employee id")
+        quit()
+else:
+    print("invalid employee id")
+    quit()
+dept = {
+    "hr": 25000,
+    "sales": 30000,
+    "developer": 60000,
+    "manager": 80000,
+    "tester": 45000
+}
+if department in dept:
+    salary=dept[department]
+    print("base salary:-",salary)
+else:
+    print("no such department available")
+    quit()
+if(experience<2):
+    bonus=0
+    print("bonus:-",bonus)
+    salary+=bonus
+elif(experience>=2 and experience<5):
+    bonus=salary*0.1
+    print("bonus:-",bonus)
+    salary+=bonus
+else:
+    bonus=salary*0.2
+    print("bonus:-",bonus)
+    salary+=bonus
+if(salary>50000):
+    tax=salary*0.1
+    print("tax:-",tax)
+    salary-=tax
+else:
+    tax=0
+    print("tax:-",tax)
+    salary-=tax
+print("final salary:-",salary)

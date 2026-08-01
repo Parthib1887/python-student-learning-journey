@@ -1,0 +1,11 @@
+import re
+
+name_num = input("Enter your name and phone number: ")
+
+mtc = re.search(r'\b\d{10}\b', name_num)
+
+if mtc:
+    phn_no = mtc.group()
+    print("Your phone number is:", phn_no)
+else:
+    print("No number found")

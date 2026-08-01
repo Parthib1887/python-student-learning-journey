@@ -1,0 +1,11 @@
+name = str(input("Enter any name: "))
+
+cnt = 0
+
+for i in range(len(name)):
+    ch = name[i]
+
+    if ch in "aeiouAEIOU":
+        cnt += 1
+
+print("No. of vowels in the name is:", cnt)

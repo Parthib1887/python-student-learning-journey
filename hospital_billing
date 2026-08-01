@@ -1,0 +1,34 @@
+patient_name=input("Enter your name:-")
+patient_age=int(input("Enter your age:-"))
+department=input("Enter your department:-")
+num_of_test=int(input("Enter the number of tests:-"))
+emergency=input("Is it an emergency? (yes/no):-")
+dept={
+    "cardiology":5000,
+    "neurology":6000,
+    "orthopedics":7000,
+    "dermatology":8000,
+    "pediatrics":9000
+}
+price=0
+if department in dept:
+        price+=dept[department]+num_of_test*350
+else:
+        print("no such department available")
+        quit()
+if patient_age>60:
+    discount=(dept[department]*0.15)
+    print("discount:-",discount)
+    price=price-discount
+if emergency=="yes":
+    price=price+1000
+elif emergency=="no":
+    price=price
+else:
+    print("invalid input")
+    quit()  
+gst=price*0.05
+finalprice=price+gst
+print("patient name:-",patient_name)
+print("patient age:-",patient_age)      
+print("final price:-",finalprice)

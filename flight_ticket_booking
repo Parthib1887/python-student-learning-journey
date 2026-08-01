@@ -1,0 +1,35 @@
+destination=input("Enter your destination:-")
+ticket_type=input("Enter your ticket type:-")
+passesnger=int(input("Enter your number of passengers:-"))
+flight={
+    "delhi":5000,
+    "mumbai":6000,
+    "chennai":7000,
+    "kolkata":8000,
+    "banglore":9000
+}
+print("destination:-",destination)
+print("ticket type:-",ticket_type)
+print("number of passengers:-",passesnger)
+if destination in flight:
+    price=flight[destination]*passesnger
+    print("total price:-",price)
+else:
+    print("no such destination available")
+    quit()
+if ticket_type=="economy":
+    price=price 
+elif ticket_type=="business":
+    price=price*1.5
+else:
+    print("no such ticket type available")
+    quit()
+gst=(price*0.12)
+print("gst:-",gst)
+if(price>20000):
+    discount=(price*0.08)
+    print("discount:-",discount)
+    finalprice=price-discount+gst
+else:
+    finalprice=gst+price
+print("final price:-",finalprice)

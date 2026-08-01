@@ -1,0 +1,28 @@
+vehicle_num=int(input("Enter the number of vehicle u r parking:-"))
+vehicle_type=int(input("Enter the number of wheel of vehicle:-"))
+Entry_time=input("Enter your entry time in (hr:min):-")
+Exit_time=input("Enter your exit time in (hr:min):-")
+Entry=Entry_time.split(":")
+Exit=Exit_time.split(":")
+Entry_min_total=(int(Entry[0])*60)+int(Entry[1])
+Exit_min_total=(int(Exit[0])*60)+int(Exit[1])
+time=Exit_min_total-Entry_min_total
+time_hr=time//60
+if(time_hr<=3):
+    time_money=50
+elif(time_hr>3 and time_hr<=6):
+    time_money=85
+elif(time_hr>6 and time_hr<=12):
+    time_money=150
+else:
+    time_money=300
+if(vehicle_type==2 and vehicle_type==3):
+    vehicle_type_money=10
+elif(vehicle_type==4 and vehicle_type==6):
+    vehicle_type_money=25
+elif(vehicle_type==8 and vehicle_type==10):
+    vehicle_type_money=60
+else:
+    time_money=100
+total_money=vehicle_type*vehicle_type_money*vehicle_num
+print("total money to be paid:-",total_money)

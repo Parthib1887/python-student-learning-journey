@@ -1,0 +1,7 @@
+import re
+txt = input("Enter a valid pan id").strip()
+mtc = re.fullmatch(r'[A-Z]{5}[0-9]{4}[A-Z]', txt)
+if mtc:
+    print("Your pan id is valid", txt)
+else:
+    print("Invalid pan id")
