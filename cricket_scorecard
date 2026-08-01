@@ -1,0 +1,67 @@
+team_name=input("Enter the team name:-")
+num_of_players=int(input("Enter the number of players:-"))
+player_score={}
+highest_score=0
+total_runs=0
+lowest_score=300
+for i in range(num_of_players):
+    player_name=input("Enter the player name:-")
+    player_score[player_name]=int(input("Enter the score of the player:-"))
+    if player_score[player_name]<0 or   player_score[player_name]>300:
+        print("score should be between 0 and 300")
+        quit()
+    total_runs+=player_score[player_name]
+    if player_score[player_name]>highest_score:
+        highest_scorer=player_name
+        highest_score=player_score[player_name]
+
+    if player_score[player_name]<lowest_score:
+        lowest_scorer=player_name
+        lowest_score=player_score[player_name]
+avg_score=total_runs/num_of_players
+target_score=int(input("Enter the target score:-"))
+extra_runs=int(input("Enter the extra runs:-"))
+if(extra_runs<0):
+    print("extra runs should be greater than 0")
+    quit()
+else:
+    total_runs+=extra_runs
+over_played=int(input("Enter the number of overs played:-"))
+if(over_played<0):
+    print("overs played should be greater than 0")
+    quit()
+run_rate=total_runs/over_played
+print("================================#@@@#====================================")
+print("the final team results are:-")
+print("Team Name:", team_name)
+print("extra runs scored:", extra_runs)
+print("Total Runs:", total_runs)
+print("final score of the team:-",total_runs)
+print("players score:-",player_score,end="\n")
+print("highest run scorer:-", highest_scorer)
+print("highest score:", highest_score)
+print("lowest run scorer:-", lowest_scorer)
+print("lowest score:", lowest_score)
+print("Average Score:", avg_score)
+if avg_score>=80:
+    print("the team is performing well")
+elif avg_score>=60 and avg_score<80:
+    print("the team is performing average")
+elif avg_score>=40 and avg_score<60:
+    print("the team is performing below average")
+else:
+    print("the team is performing poorly")
+print("Run Rate:", run_rate)
+if run_rate>=8:
+    print("the team is playing aggressively")
+elif run_rate>=5 and run_rate<8:
+    print("the team is playing moderately")
+else:
+    print("the team is playing defensively")
+if total_runs==target_score:
+    print("the match is tied")
+elif total_runs>target_score:
+    print("the team has won the match")
+else:
+    print("the team has lost the match")
+print("================================#@@@#====================================")
