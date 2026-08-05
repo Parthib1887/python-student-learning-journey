@@ -1,0 +1,47 @@
+#Q1
+num_of_movie=int(input("Enter the number of movie u want to watch:-"))
+movie={
+    "Inception":200,
+    "Interstellar":250,
+    "Tenet":300,
+    "The Dark Knight":150,
+    "The Prestige":100,
+    "odyssy":350,
+    "spiderman:brand new day":400
+}
+seat_final_price=0
+price=0
+total_price=0
+for i in range(0,num_of_movie):
+    movie_name=input("Enter the name of movie u want to watch:-")
+    seat_type=input("Enter the type of seat u want to book:-")  
+    num_of_tickets=int(input("Enter the number of ticket u want to book for this movie:-"))
+    if(movie_name in movie):
+        price=movie[movie_name]*num_of_tickets
+        print("the price of a single ticket is:-",movie[movie_name])
+        if(seat_type=="normal"):
+            seat_price=0    
+            seat_final_price+=seat_price
+        elif(seat_type=="premium"):
+            seat_price=0.5*price
+            seat_final_price+=seat_price
+            seat_price=0
+        else:
+            print("invalid seat type")
+            quit() 
+    else:
+        print("the movie is not available")
+        exit() #quit()
+    total_price+=price+seat_final_price
+    price=0
+    seat_final_price=0
+gst=0.12*total_price
+final_price=total_price+gst
+if(final_price>3000):
+    discount=0.1*final_price
+    final_price=final_price-discount
+    print("discount given:-",discount)
+else:
+    print("no discount given")
+    final_price=final_price
+print("final price:-",final_price)
